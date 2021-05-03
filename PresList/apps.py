@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class PreslistConfig(AppConfig):
-    name = 'PresList'
+class LmlistConfig(AppConfig):
+    name = 'LMList'

@@ -1,0 +1,125 @@
+<html>
+<head>
+<style>
+  h5 {
+  font-family: Calibri; 
+  font-size: 25pt;         
+  font-style: normal; 
+  font-weight: bold; 
+  color:Red;
+  text-align: center; 
+  text-decoration: underline
+  background: #8c968f;
+}
+table, th, td {
+  border: 1px solid black;
+}
+td {
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
+
+table {
+  width: 100%;
+}
+table {
+  font-family: calibri, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #64b37c;
+}
+table caption {
+  font-family: calibri, sans-serif;
+  font-size: 30px;
+  background-color: ##64b37c;
+  
+}
+
+table th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 15px; 
+   background-color: #64b37c;
+}
+
+tr:nth-child(even) {
+  background-color: #64b37c;
+}
+  
+</style>
+  
+<title>Student Registration Form</title>
+
+</head>
+ 
+<body>
+<h5>Business Registration</h5>
+
+ 
+<table align="center" cellpadding = "20">
+
+<form method="POST" action="/PresList/{{ list.id }}/add_item">
+  <tr>
+<td>FullName</td>
+<td><input id="fname" type="text" name="fname" maxlength="30"/ required="required">
+</td>
+</tr>
+ 
+<!----- st id ---------------------------------------------------------->
+<tr>
+<td>IDRegistration</td>
+<td><input id="ir"type="text" name="ir" maxlength="30"/ required="required">
+</td>
+</tr>
+ 
+<!----- violation---------------------------------------------------------->
+<tr>
+<td>BusinessName</td>
+<td><input id="bname" type="text" name="bname" maxlength="30"/ required="required">
+</td>
+</tr>
+    {% csrf_token %}
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+ 
+         
+<table id="id_table" name='tr'>
+  <table style="width:100%">     
+  
+  <caption>List Of Registered Business</caption>
+  <tr>
+    <caption>Registered</caption>
+  <tr>
+    <th>Registered</th>
+    <th>Owners Name</th>
+    <th>Registered ID</th>
+    <th>Business Name</th>
+    
+    </tr>
+
+       {% for item in list.item_set.all %} 
+       <! -- {{ forloop.counter }}:  -->
+        <td>{{ item.Owner }}</td>
+        <td>{{ item.fullname }}</td>
+   
+         <td>{{ item.ir }}</td>
+        
+        <td>{{ item.bname }}</td>
+          </tr>
+        {% endfor %}
+    </table>
+
+</body>   
+</html>
+
+ 
