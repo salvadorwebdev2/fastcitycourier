@@ -60,33 +60,3 @@ class PageTest(LiveServerTestCase):
 
 	
 
-
-'''	
-
-if __name__=='__main__':
-	 	unittest.main()
-#this page should update and show two types of id on the list
-	 Pet = self.browser.find_element_by_id('pet')
-	 Pet.click()
-	 time.sleep(1)
-	 Pet.send_keys('Kuma')
-	 time.sleep(1)
-	 Breed = self.browser.find_element_by_id('breed')
-	 Breed.click()
-	 time.sleep(1)
-	 Breed.send_keys('Pomeranian')
-	 time.sleep(1)
-	 Day = self.browser.find_element_by_id('birthday')
-	 Day.click()
-	 time.sleep(1)
-	 Day.send_keys('05/25/2012')
-	 btnContinue = self.browser.find_element_by_id('btnContinue')
-	 btnContinue.click()
-	 time.sleep(2)
-	 #self.assertIn('1: Shana Puspin born on 08/22/2013',[row.text for row in rows])
-	 #self.assertIn('1: Kuma Pomeranian born on 05/25/2012',[row.text for row in rows])
-	 self.check_for_rows_in_list_table('1: Shana Puspin born on 08/22/2013')
-	 self.check_for_rows_in_list_table("1: Kuma Pomeranian born on 05/25/2012")
-	 table = self.browser.find_element_by_id('listTable')
-	 rows = table.find_element_by_tag_name('tr')
-'''
